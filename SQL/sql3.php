@@ -62,7 +62,8 @@
 			exit;
 		}
 
-		$query = "SELECT bookname,authorname FROM books WHERE number =".'$number'""; 
+		//$query = "SELECT bookname,authorname FROM books WHERE number =".'$number'.""; 
+		$query = "SELECT bookname,authorname FROM books WHERE number = $number"; //Int
 		$result = mysqli_query($conn,$query);
 
 		if (!$result) { //Check result
