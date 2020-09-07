@@ -14,6 +14,7 @@ Para instalar é bem simples, vamos lá! :)
 4) Acesse o seu IP e portas configuradas no servidor PHP: http://127.0.0.1:80
 5) Clique no botão "SETUP" e pronto! :)
 
-Espero ter ajudado!
+TREINAMENTO COMPLETO GRATUITO: https://www.youtube.com/playlist?list=PLM9tXXhPL5JPWa0AfvorJfex1Fr6KoIgr
+
 
 -XPSec Security Team
