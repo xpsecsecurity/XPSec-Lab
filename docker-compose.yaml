@@ -1,0 +1,29 @@
+version: '3'
+services:
+  xpsec:
+    build: .
+    ports:
+      - "80:80"
+    expose:
+      - "80"
+    depends_on:
+      - mysqldb
+    links:
+      - mysqldb
+  mysqldb:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - "/srv/mysql/data:/var/lib/mysql"
+    ports:
+      - "3306:3306"
+    networks:
+      - mysql-compose-network
+
+networks:
+  mysql-compose-network:
+    driver: bridge
