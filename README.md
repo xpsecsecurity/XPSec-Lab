@@ -1,7 +1,5 @@
 <p align="center">
-  <a href="http://ant.design">
     <img width="800" src="https://i.pinimg.com/originals/c7/4c/f3/c74cf3a50dcb214e091cc7393d1cac99.png">
-  </a>
 </p>
 
 <h1 align="center"> XPSecLab </h1>
