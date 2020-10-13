@@ -34,9 +34,9 @@
 <?php
 
 if (isset($_POST["submit"])) {
-   $dbhost = 'localhost';
+   $dbhost = !empty(getenv('DATABASE_HOST')) ? getenv('DATABASE_HOST') : 'localhost';
    $dbuser = 'root';
-   $dbpass = 'root';
+   $dbpass = !empty(getenv('DATABASE_ROOT_PASSWORD')) ? getenv('DATABASE_ROOT_PASSWORD') : 'root';
    $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
 
    if(!$conn) {
@@ -48,9 +48,9 @@ if (isset($_POST["submit"])) {
        mysqli_close($conn);
 }
 if (isset($_POST["submit1"])) {
-   $dbhost = 'localhost';
+   $dbhost = !empty(getenv('DATABASE_HOST')) ? getenv('DATABASE_HOST') : 'localhost';
    $dbuser = 'root';
-   $dbpass = '';
+   $dbpass = !empty(getenv('DATABASE_ROOT_PASSWORD')) ? getenv('DATABASE_ROOT_PASSWORD') : 'root';
    $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
 
    if ($conn) {
