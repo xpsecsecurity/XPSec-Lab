@@ -1,0 +1,26 @@
+version: '3'
+services:
+  xpsec:
+    build: .
+    ports:
+      - "80:80"
+    expose:
+      - "80"
+    environment:
+      DATABASE_HOST: "mysqldb"
+      DATABASE_ROOT_PASSWORD: root
+    depends_on:
+      - mysqldb
+    links:
+      - mysqldb
+  mysqldb:
+    image: mysql
+    entrypoint: ['/entrypoint.sh', '--default-authentication-plugin=mysql_native_password']
+    environment:
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - "/var/lib/mysql"
+    ports:
+      - "3306:3306"
+
